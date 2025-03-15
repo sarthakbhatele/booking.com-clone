@@ -7,11 +7,11 @@ type Props = {
 }
 
 export type SearchParams = {
-    url: URL; // ss: string;
+    url?: URL; 
     checkin: string;
     checkout: string;
-    group_adults: string;
-    group_children: string;
+    group_adults?: string;
+    group_children?: string;
     no_rooms: string;
 }
 
