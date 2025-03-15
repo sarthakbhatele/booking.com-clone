@@ -173,7 +173,6 @@ function Header() {
                     </div>
                 </Dialog.Panel>
             </Dialog>
-            <SideBar />
         </header>
     )
 }
