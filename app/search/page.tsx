@@ -1,4 +1,5 @@
 import { fetchResults } from "@/lib/fetchResults";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -40,7 +41,7 @@ async function SearchPage({ searchParams }: Props) {
                 <div className="space-y-2 mt-5">
                     {results.content.listings.map((item, i) => (
                         <div key={i} className="flex space-y-w justify-between space-x-4 p-5 border rounded-lg">
-                            <img
+                            <Image
                                 src={item.url}
                                 alt="image of property"
                                 className="h-44 w-44 rounded-lg"
