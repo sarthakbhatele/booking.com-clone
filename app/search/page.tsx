@@ -41,7 +41,7 @@ async function SearchPage({ searchParams }: Props) {
                 <div className="space-y-2 mt-5">
                     {results.content.listings.map((item, i) => (
                         <div key={i} className="flex space-y-w justify-between space-x-4 p-5 border rounded-lg">
-                            <Image
+                            <img
                                 src={item.url}
                                 alt="image of property"
                                 className="h-44 w-44 rounded-lg"

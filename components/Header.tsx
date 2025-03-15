@@ -6,7 +6,6 @@ import { MenuIcon, X } from "lucide-react";
 import { Dialog, Disclosure, Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import { ChatBubbleLeftIcon, ChevronDownIcon, HomeIcon, PaperAirplaneIcon, PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 
 const products = [
@@ -44,7 +43,7 @@ function Header() {
                 <div className="flex lg:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">CheckInn.com</span>
-                        <Image src="/images/check.jpg" alt="Logo" className="h-30 w-auto rounded-md border-none" />
+                        <img src="/images/check.jpg" alt="Logo" className="h-30 w-auto rounded-md border-none" />
                     </Link>
                 </div>
 
@@ -132,7 +131,7 @@ function Header() {
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">CheckInn.com</span>
-                            <Image src="/images/check.jpg" alt="Logo" className="h-15 w-auto rounded-md border-none" />
+                            <img src="/images/booking.png" alt="Logo" className="h-15 w-auto rounded-md border-none" />
                         </a>
                         <button type="button" className="-m-2.5 rounded-md p-2.5 text-white" onClick={() => setMobileMenuOpen(false)}>
                             <span className="sr-only">Close menu</span>
