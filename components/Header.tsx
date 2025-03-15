@@ -6,7 +6,7 @@ import { MenuIcon, X } from "lucide-react";
 import { Dialog, Disclosure, Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import { ChatBubbleLeftIcon, ChevronDownIcon, HomeIcon, PaperAirplaneIcon, PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/lib/utils";
-import SideBar from "./SideBar";
+
 
 const products = [
     {
