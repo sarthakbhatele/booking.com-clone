@@ -4,16 +4,26 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-    searchParams: Record<string, string | string[] | undefined>;
-};
+    searchParams: SearchParams;
+}
+
+export type SearchParams = {
+    url?: URL; 
+    checkin: string;
+    checkout: string;
+    group_adults?: string;
+    group_children?: string;
+    no_rooms: string;
+}
 
 async function SearchPage({ searchParams }: Props) {
+
     if (!searchParams.url) return notFound();
 
     const results = await fetchResults(searchParams);
 
-    if (!results) return <div>No Results...</div>;
-
+    if (!results) return <div>No Results...</div>
+    // console.log(results);
     return (
         <section>
             <div className="mx-auto max-w-7xl p-6 lg:px-8">
@@ -25,17 +35,16 @@ async function SearchPage({ searchParams }: Props) {
 
                 <hr className="mb-5" />
 
-                <h3>{results.content.total_listings}</h3>
-
+                <h3>
+                    {results.content.total_listings}
+                </h3>
                 <div className="space-y-2 mt-5">
                     {results.content.listings.map((item, i) => (
-                        <div key={i} className="flex justify-between space-x-4 p-5 border rounded-lg">
+                        <div key={i} className="flex space-y-w justify-between space-x-4 p-5 border rounded-lg">
                             <Image
                                 src={item.url}
                                 alt="image of property"
                                 className="h-44 w-44 rounded-lg"
-                                width={176} 
-                                height={176} 
                             />
                             <div className="flex flex-1 space-x-5 justify-between">
                                 <div>
@@ -60,13 +69,15 @@ async function SearchPage({ searchParams }: Props) {
                                     <p className="text-sm">{item.booking_metadata}</p>
                                     <p className="text-2xl font-bold">{item.price}</p>
                                 </div>
+
                             </div>
+
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
-    );
+    )
 }
-
-export default SearchPage;
+export default SearchPage
