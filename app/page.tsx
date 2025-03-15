@@ -1,6 +1,5 @@
 import SearchForm from "@/components/SearchForm";
 import { trending_data } from "@/data/trending";
-import Image from "next/image";
 
 export default function Home() {
   return (
